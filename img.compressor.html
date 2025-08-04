@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Compressor Tool - Free & Fast</title>
+  <meta name="description" content="Compress JPG, PNG, and WebP images online for free without losing quality. Fast, secure, and easy to use.">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 20px;
+      box-shadow: 0 2px 5px #aaa;
+    }
+
+    .container {
+      padding: 30px 20px;
+    }
+
+    .upload-box,
+    .slider-box {
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .upload-label {
+      background: #0077cc;
+      padding: 12px 25px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    #compressBtn {
+      background: #28a745;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px auto;
+    }
+
+    #compressBtn:hover {
+      background: #218838;
+    }
+
+    #output {
+      margin-top: 30px;
+    }
+
+    canvas {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+    }
+
+    #downloadBtn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🖼️ Free Image Compressor Tool</h1>
+    <p>Compress your images (JPG, PNG, WebP) without quality loss.</p>
+  </header>
+
+  <main class="container">
+    <div class="upload-box">
+      <label for="upload" class="upload-label">📁 Select Image</label>
+      <input type="file" id="upload" accept="image/*" />
+    </div>
+
+    <div class="slider-box">
+      <label for="quality">Compression Quality: <span id="qualityValue">70</span>%</label>
+      <input type="range" id="quality" min="10" max="100" value="70" />
+    </div>
+
+    <button id="compressBtn">⚡ Compress Image</button>
+    
+    <div id="output" style="display: none;">
+      <h2>✅ Compressed Image Preview:</h2>
+      <canvas id="canvas"></canvas><br>
+      <a id="downloadBtn" download="compressed-image.jpg">⬇️ Download Compressed Image</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ImageCompressorTool | Built with ❤️ for GitHub Deployment</p>
+  </footer>
+
+  <!-- Optional AdSense Placeholder -->
+  <!--
+  <div style="margin: 20px auto;">
+    <p>Advertisement</p>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXX"
+        data-ad-slot="XXXXXXX"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  -->
+
+  <script>
+    const uploadInput = document.getElementById("upload");
+    const qualityInput = document.getElementById("quality");
+    const qualityValue = document.getElementById("qualityValue");
+    const compressBtn = document.getElementById("compressBtn");
+    const canvas = document.getElementById("canvas");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const output = document.getElementById("output");
+    let originalImage = null;
+
+    qualityInput.addEventListener("input", () => {
+      qualityValue.textContent = qualityInput.value;
+    });
+
+    uploadInput.addEventListener("change", () => {
+      const file = uploadInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          originalImage = img;
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    compressBtn.addEventListener("click", () => {
+      if (!originalImage) {
+        alert("Please upload an image first.");
+        return;
+      }
+
+      const ctx = canvas.getContext("2d");
+      canvas.width = originalImage.width;
+      canvas.height = originalImage.height;
+      ctx.drawImage(originalImage, 0, 0);
+
+      const quality = qualityInput.value / 100;
+      const compressedDataUrl = canvas.toDataURL("image/jpeg", quality);
+
+      downloadBtn.href = compressedDataUrl.replace("image/jpeg", "image/octet-stream");
+      output.style.display = "block";
+    });
+  </script>
+</body>
+</html>
