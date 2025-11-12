@@ -3,37 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sachhitasveer Tools</title>
-</head>
-<body>
-  <h1>स्वागत है — Sachhitasveer Tools</h1>
-  <p>यह वेबसाइट GitHub Pages पर सफलतापूर्वक होस्ट की गई है।</p>
-  <p>अब यह 404 Error नहीं दिखाएगी 🚀</p>
-</body>
-</html>
   <title>Image Compressor Tool - Free Online Image Optimizer</title>
   <meta name="description" content="Compress JPG, PNG, and WebP images online for free. Optimise your images without losing quality using our free Image Compressor Tool.">
   <meta name="keywords" content="image compressor, compress images, online image optimiser, jpg png webp, free image tool">
   <meta name="author" content="ImageCompressorTool Team">
-    <!-- Google Font -->
-  <link href=/https://www.sachhitasveertools.com”css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <script type="text/javascript">
-	atOptions = {
-		'key' : 'cb54c8dbad32378ad39ae93533ae42cb',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//brillianceremisswhistled.com/cb54c8dbad32378ad39ae93533ae42cb/invoke.js"></script>
-  
-  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #f9f9f9;
       color: #333;
     }
@@ -59,11 +40,6 @@
     .main-content {
       padding: 40px 20px;
       text-align: center;
-    }
-
-    .main-content h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
     }
 
     .cta-button {
@@ -108,67 +84,172 @@
       margin-top: 50px;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
-      }
+    /* 🔹 Floating Button Style */
+    .floating-ad-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff9800;
+      color: white;
+      padding: 12px 18px;
+      font-size: 16px;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      z-index: 9999;
+      text-decoration: none;
+    }
 
-      .cta-button {
-        font-size: 16px;
-        padding: 12px 24px;
-      }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* 🔹 Exit Popup */
+    #exit-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #exit-popup .popup-content {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 350px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    #exit-popup a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #0078d7;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #exit-popup a:hover {
+      background: #005fa3;
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <h1>🖼️ Welcome to Image Compressor Tool</h1>
     <p>Compress JPG, PNG, and WebP images online — quickly and easily. No quality loss. No signup required.</p>
   </header>
 
+  <!-- 🔹 Adsterra Smart Link Section -->
+  <script>
+  (function() {
+    "use strict";
+
+    var ADSTERRA_SMART_LINK = "https://brillianceremisswhistled.com/qtm5xp3h?key=fe24bdd44deba970ba6e165aab1aa30a";
+
+    // 🔸 Auto open after 10 seconds
+    setTimeout(function() {
+      var newWindow = window.open(ADSTERRA_SMART_LINK, "_blank", "noopener,noreferrer");
+      if (newWindow) {
+        newWindow.blur();
+        window.focus();
+      }
+    }, 10000);
+
+    // 🔸 Visible offer box
+    document.addEventListener("DOMContentLoaded", function() {
+      var adBox = document.createElement("div");
+      adBox.innerHTML = `
+        <div style="text-align:center; background:#fff3cd; padding:12px; margin:15px; border-radius:8px; font-size:18px; border:1px solid #ffeeba;">
+          💰 <a href="${ADSTERRA_SMART_LINK}" target="_blank" rel="noopener noreferrer" style="color:#0078d7; font-weight:bold; text-decoration:none;">
+          Click Here to Get Special Offers & Earn Rewards!
+          </a> 💰
+        </div>`;
+      document.body.insertBefore(adBox, document.body.firstChild);
+    });
+
+    // 🔸 Floating Button
+    document.addEventListener("DOMContentLoaded", function() {
+      var floatBtn = document.createElement("a");
+      floatBtn.href = ADSTERRA_SMART_LINK;
+      floatBtn.target = "_blank";
+      floatBtn.className = "floating-ad-btn";
+      floatBtn.innerText = "🔥 Best Offers";
+      document.body.appendChild(floatBtn);
+    });
+
+    // 🔸 Exit Popup
+    window.addEventListener("mouseout", function(e) {
+      if (e.clientY < 0) {
+        document.getElementById("exit-popup").style.display = "flex";
+      }
+    });
+  })();
+  </script>
+
+  <div id="exit-popup">
+    <div class="popup-content">
+      <h2>रुकिए! जाने से पहले 💰</h2>
+      <p>सिर्फ आज — खास ऑफर देखें और इनाम पाएं!</p>
+      <a href="https://brillianceremisswhistled.com/qtm5xp3h?key=fe24bdd44deba970ba6e165aab1aa30a" target="_blank">👉 ऑफर देखें</a>
+    </div>
+  </div>
+
   <section class="main-content">
     <h2>Start Compressing Images Instantly</h2>
-    <a href="/Tool-9/img.compressor.html"class="cta-button">🚀 Launch Image Compressor Tool</a>
+    <a href="/Tool-9/img.compressor.html" class="cta-button">🚀 Launch Image Compressor Tool</a>
   </section>
 
   <section class="features">
-  <a href="/Tool-9/img.compressor.html"class="feature-card" style="text-decoration: none; color: inherit;">
-    <h3>🔒 Secure & Private</h3>
-    <p>Your images are processed locally in your browser. We don't store anything.</p>
-  </a>
+    <a href="/Tool-9/img.compressor.html" class="feature-card" style="text-decoration: none; color: inherit;">
+      <h3>🔒 Secure & Private</h3>
+      <p>Your images are processed locally in your browser. We don't store anything.</p>
+    </a>
 
-  <a href="/Tool-9/img.compressor.html"class="feature-card" style="text-decoration: none; color: inherit;">
-    <h3>⚡ Super Fast</h3>
-    <p>Compress large images within seconds using modern browser technology.</p>
-  </a>
+    <a href="/Tool-9/img.compressor.html" class="feature-card" style="text-decoration: none; color: inherit;">
+      <h3>⚡ Super Fast</h3>
+      <p>Compress large images within seconds using modern browser technology.</p>
+    </a>
 
-  <a href="/Tool-9/img.compressor.html" " class="feature-card" style="text-decoration: none; color: inherit;">
-    <h3>📱 Fully Responsive</h3>
-    <p>Optimised for desktop, tablet, and mobile. Use anywhere, anytime.</p>
-  </a>
+    <a href="/Tool-9/img.compressor.html" class="feature-card" style="text-decoration: none; color: inherit;">
+      <h3>📱 Fully Responsive</h3>
+      <p>Optimised for desktop, tablet, and mobile. Use anywhere, anytime.</p>
+    </a>
 
-  <a href="/Tool-9/img.compressor.html" class="feature-card" style="text-decoration: none; color: inherit;">
-    <h3>💡 No Installation</h3>
-    <p>Just open the tool in your browser and start compressing. It's that simple.</p>
-  </a>
-</section>
+    <a href="/Tool-9/img.compressor.html" class="feature-card" style="text-decoration: none; color: inherit;">
+      <h3>💡 No Installation</h3>
+      <p>Just open the tool in your browser and start compressing. It's that simple.</p>
+    </a>
+  </section>
 
-<script type="text/javascript">
-	atOptions = {
-		'key' : 'cb54c8dbad32378ad39ae93533ae42cb',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//brillianceremisswhistled.com/cb54c8dbad32378ad39ae93533ae42cb/invoke.js"></script>
-  
+  <!-- 🔹 Ad Banner (728x90) -->
+  <div style="text-align:center; margin:20px auto; max-width:728px;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : 'cb54c8dbad32378ad39ae93533ae42cb',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//brillianceremisswhistled.com/cb54c8dbad32378ad39ae93533ae42cb/invoke.js"></script>
+  </div>
 
   <footer>
     <p>© 2025 ImageCompressorTool | Built with ❤️ for Everyone</p>
   </footer>
-
 </body>
 </html>
+
